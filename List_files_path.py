@@ -1,9 +1,21 @@
+__author__ = 'Robin Cole'
+__version__ = '0.1.0'
+"""
+Created on Tue Sep  6 10:14:30 2016
+http://tkinter.unpythonic.net/wiki/tkFileDialog
+"""
 import os
-import Tkinter
-import tkFileDialog
+try:
+    # Python 3.x
+    from tkinter import Tk
+    from tkinter.filedialog import askdirectory
+except ImportError:
+    # Python 2.x
+    from Tkinter import Tk
+    from tkFileDialog import askdirectory
 
-root = Tkinter.Tk().withdraw()     # Close the root window
-my_dir = tkFileDialog.askdirectory()  # get directory
+root = Tk().withdraw()     # Close the root window
+my_dir = askdirectory()  # get directory
 print(my_dir)
 # my_dir = "/Users/directory_path"
 
