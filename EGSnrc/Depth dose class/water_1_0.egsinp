@@ -1,0 +1,142 @@
+TITLE= depth_dose_example central axis depth-dose curve in H2O due to broad Co beam
+
+##########################
+:start I/O control:
+
+IWATCH= off
+STORE INITIAL RANDOM NUMBERS= no
+IRESTART= first
+STORE DATA ARRAYS= yes
+OUTPUT OPTIONS= long
+ELECTRON TRANSPORT= normal
+DOSE ZBOUND MIN= 1
+DOSE ZBOUND MAX= 51
+DOSE RBOUND MIN= 0
+DOSE RBOUND MAX= 1
+
+:stop I/O control:
+#########################
+
+##########################
+:start Monte Carlo inputs:
+
+NUMBER OF HISTORIES= 10000000
+INITIAL RANDOM NO. SEEDS= 1, 3
+MAX CPU HOURS ALLOWED= 90.000
+IFULL= dose and stoppers
+STATISTICAL ACCURACY SOUGHT= 0.0000
+SCORE KERMA= no
+
+:stop Monte Carlo inputs:
+#########################
+
+##########################
+:start geometrical inputs:
+
+METHOD OF INPUT= groups
+Z OF FRONT FACE= 0.
+NSLAB= 50
+SLAB THICKNESS= 0.5
+RADII= 1
+MEDIA= H2O521ICRU,
+ Water_1.0;
+ 
+DESCRIPTION BY= planes
+MEDNUM= 1, 2, 1
+START ZSLAB= 1, 21, 31
+STOP ZSLAB= 20, 30, 50
+START RING= 1, 1, 1
+STOP RING= 1, 1, 1
+
+:stop geometrical inputs:
+#########################
+
+##########################
+:start source inputs:
+
+INCIDENT PARTICLE= photon
+SOURCE NUMBER= 2
+SOURCE OPTIONS= 0, 0, 0, 0
+INCIDENT ENERGY= monoenergetic
+INCIDENT KINETIC ENERGY(MEV)= 6
+
+:stop source inputs:
+#########################
+
+##########################
+:start MC transport parameter:
+
+Global ECUT= 0.521
+Global PCUT= 0.001
+Global SMAX= 1e10
+ESTEPE= 0.25
+XImax= 0.5
+Skin depth for BCA= 3
+Boundary crossing algorithm= EXACT
+Electron-step algorithm= PRESTA-II
+Spin effects= on
+Brems angular sampling= KM
+Brems cross sections= BH
+Photon cross sections= si
+Electron Impact Ionization= Off
+Photon cross-sections output= off
+Bound Compton scattering= Off
+Pair angular sampling= Simple
+Photoelectron angular sampling= Off
+Rayleigh scattering= Off
+Atomic relaxations= On
+Set PCUT= 0
+Set PCUT start region= 1
+Set PCUT stop region= 1
+Set ECUT= 0
+Set ECUT start region= 1
+Set ECUT stop region= 1
+Set SMAX= 0
+Set SMAX start region= 1
+Set SMAX stop region= 1
+
+:stop MC transport parameter:
+#########################
+
+##########################
+:start media definition:
+
+
+
+:stop media definition:
+#########################
+
+##########################
+:start variance reduction:
+
+BREM SPLITTING= off
+NUMBER OF BREMS PER EVENT= 1
+CHARGED PARTICLE RUSSIAN ROULETTE= off
+ELECTRON RANGE REJECTION= off
+ESAVEIN= 0.0
+RUSSIAN ROULETTE DEPTH= 0.0000
+RUSSIAN ROULETTE FRACTION= 0.0000
+EXPONENTIAL TRANSFORM C= 0.0000
+PHOTON FORCING= on
+START FORCING= 1
+STOP FORCING AFTER= 1
+CS ENHANCEMENT FACTOR= 1
+CS ENHANCEMENT START REGION= 1
+CS ENHANCEMENT STOP REGION= 1
+
+:stop variance reduction:
+#########################
+
+##########################
+:start plot control:
+
+PLOTTING= on
+LINE PRINTER OUTPUT= off
+EXTERNAL PLOTTER OUTPUT= on
+EXTERNAL PLOT TYPE= Histogram
+PLOT RADIAL REGION IX= 1
+PLOT PLANAR REGION IZ= 0
+
+:stop plot control:
+#########################
+

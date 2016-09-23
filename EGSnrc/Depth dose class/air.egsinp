@@ -20,7 +20,7 @@ DOSE RBOUND MAX= 1
 ##########################
 :start Monte Carlo inputs:
 
-NUMBER OF HISTORIES= 100000
+NUMBER OF HISTORIES= 10000000
 INITIAL RANDOM NO. SEEDS= 1, 3
 MAX CPU HOURS ALLOWED= 90.000
 IFULL= dose and stoppers
