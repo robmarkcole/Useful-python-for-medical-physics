@@ -1,6 +1,6 @@
 @g0 type xy 
 @    title "depth_dose_example central axis depth-dose curve in H2O due"
-@    subtitle "dose vs. depth on Thu Sep  8 16:56:21 2016"
+@    subtitle "dose vs. depth on Thu Sep 22 15:43:34 2016"
 @    legend on
 @    legend box linestyle 0
 @    legend x1 0.6
