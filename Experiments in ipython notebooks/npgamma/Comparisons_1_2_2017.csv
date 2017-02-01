@@ -1,0 +1,9 @@
+,2D DTA at 1%/1mm,2D DTA at 1%/1mm,3D DTA at 1%/1mm,,1D DD at 1%/1mm,2D DD at 1%/1mm,2D DD at 1%/1mm
+Total Image Area,250,62500mm,15625000,,,62500mm,
+Area of reference image inner square,50 mm,50x50 mm =2500 mm,125000,,,50x50 mm =2500 mm2,
+Area of evaluated image inner square,50 mm,50x50 mm =2500 mm2,125000,,,50x50 mm =2500 mm2,
+Total Area in comparison image not fulfilling gamma criteria,50,50x50 mm = 2500mm2 (reference image square),125000,,,2500 mm2 (no shift in evaluated square position but all pixels in evaluated square >1% DD from reference square),
+,48 mm,48x48 mm = 2304mm2 (evaluated image square due to circumference of square fulfilling 1mm distance criteria),48x48x48 mm = 110592,,,,
+Total Area fulfilling gamma criteria,250 – (50 + 48),62500 – (2500 + 2304),15625000 – (125000 + 110592),,,62500 - 2500,
+,152,= 57696mm2,15389408,,,= 60000mm2,
+% passing rate,60.8,,98.49,,,,
