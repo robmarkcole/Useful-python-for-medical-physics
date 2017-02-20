@@ -1,0 +1,22 @@
+structure,metric,Sign,3_Fraction_54Gy,5_Fraction_55Gy,Unit,Of_Prescription_dose?
+PTV CHEST,D95%,> ,100,100,%,1
+PTV CHEST,D99%,>,90,90,%,1
+PTV CHEST,D0.1CC,between,118-134,118-134,%,1
+Foramen,DMAX,<,18,25,Gy,0
+Oesophagus,D0.1CC,<,24,27,Gy,0
+R Brachial plex,D0.1CC,<,24,27,Gy,0
+L Brachial plex,D0.1CC,<,24,27,Gy,0
+Heart,D0.1CC,<,24,27,Gy,0
+Trachea,D0.1CC,<,30,32,Gy,0
+Bronchial tree,D0.1CC,<,30,32,Gy,0
+Ribs,D0.1CC,<,35,35,Gy,0
+Ribs,V30Gy,<,30,30,CC,0
+Both Lungs-ITV,V20Gy,<,10,10,%,0
+Both Lungs-ITV,V12.5Gy,<,15,15,%,0
+Both Lungs-ITV,V5Gy,<,26,26,%,0
+Both Lungs-ITV,D1500CC,<,11,13,Gy,0
+Both Lungs-ITV,D1000CC,<,11,14,Gy,0
+Liver,700CC,<,15,15,Gy,0
+Liver,V21,<,33,60,%,0
+Liver,V15,<,50,NA,%,0
+Liver,D50%,<,NA,20,Gy,0
