@@ -1,5 +1,5 @@
 ﻿Patient Name         : Acuros lung evaluation, RC Physics
-Patient ID           : Case1_AXB_Dm
+Patient ID           : Case1_AXB
 Comment              : DVHs for one plan
 Date                 : 06 February 2017 16:38:35
 Exported by          : rcole
@@ -8,7 +8,7 @@ Description          : The cumulative DVH displays the percentage (relative)
                        or volume (absolute) of structures that receive a dose
                        equal to or greater than a given dose.
 
-Plan: Case1_AXB_Dm
+Plan: Case1_AXB
 Course: 1
 Plan Status: Unapproved
 Prescribed dose [Gy]: 55.000
