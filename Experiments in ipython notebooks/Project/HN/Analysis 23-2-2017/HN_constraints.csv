@@ -1,0 +1,17 @@
+Structure,Metric,Sign,Dose_Gy
+PTV1,DMIN,>,64
+PTV1,D50%,>,65
+PTV1,DMAX,<,66
+PTV2,DMIN,>,53
+PTV2,D50%,<,54
+PTV2,D10%,<,55
+Cord + 0.5cm,DMAX,<,45
+Bstem + 0.5cm,DMAX,<,50
+Ipsi Par Edit,DMAX,<,65
+Contra Par Edit,DMAX,<,54
+Pseudo midline,DMAX,<,40
+Pseudo oral cavity,DMAX,<,45
+Optic nerve + 0.3cm,DMAX,<,50
+Chiasm + 0.3cm,DMAX,<,45
+Retina,DMAX,<,45
+Lenses,DMAX,<,8
