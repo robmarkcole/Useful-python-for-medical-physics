@@ -1,6 +1,11 @@
 import numpy as np
 import pandas as pd
 from scipy import interpolate
+import os
+
+def List_txt():
+    files = os.listdir()   # return a list of files
+    return [file for file in files if file.endswith('.txt')]
 
 def Load_patient(file):  # file = 'Case1_AAA.txt'  string
     with open(file, "r") as file_:
@@ -47,7 +52,7 @@ def Load_patient(file):  # file = 'Case1_AAA.txt'  string
 
         data[:,i] = f(dose_index)
     
-    my_iterables = [[patID], ['AAA'], structures_names_list]
+    my_iterables = [[patID], [planID], structures_names_list]
     my_index = pd.MultiIndex.from_product(my_iterables, names = ['Patient ID', 'Plan ID', 'Structure'])
 
     df = pd.DataFrame(data.T, index = my_index)
@@ -55,3 +60,23 @@ def Load_patient(file):  # file = 'Case1_AAA.txt'  string
     df.index  = dose_index
     df.index.name = 'Dose (Gy)'
     return df
+	
+def Load_files_to_df(files_list):    # pass a list of files to load into a df
+    for i, file in enumerate(files_list):
+        if i == 0:
+            multi_df = Load_patient(file)        
+        else:
+            multi_df = pd.concat([multi_df, Load_patient(file)], axis=1)
+    return multi_df
+	
+def get_dmin(df):
+    return df[(df < 100.0) & (df > 0.0)].idxmax() 
+	
+def get_dmax(df):
+    return df[(df < 100.0) & (df > 0.0)].idxmin() 
+	
+def get_d_metric(df, D_metric_pct):                 # dunction to get e.g the D50% metric passing '50' and a DVH entry ()
+    x = df.values
+    y = df.index.values
+    f = interpolate.interp1d(x,y, bounds_error=False, fill_value=0)
+    return f(D_metric_pct)*1    # adding the *1 turns it from an array to a double..
