@@ -76,7 +76,7 @@ def get_dmax(df):
     return df[(df < 100.0) & (df > 0.0)].idxmin()
 
 def get_d_metric(df, D_metric_pct):                 # dunction to get e.g the D50% metric passing '50' and a DVH entry ()
-    x = df.values[:,0]
+    x = df.values
     y = df.index.values
     f = interpolate.interp1d(x,y, bounds_error=False, fill_value=0)
     return f(D_metric_pct)*1    # adding the *1 turns it from an array to a double..
